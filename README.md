@@ -31,6 +31,12 @@ A Online Book Store App based on Spring Boot
  - The application runs on port 8090
  - Sample Data are inserted using scripts which can be found in resources/scripts/tables.sql
  
+** Tables Created **
+ - Author
+ - Classification
+ - Book
+ - Promotion
+ 
 ** API Documentation for the Project **
  - Swagger Documention will be available on the url - http://localhost:8090/swagger-ui/index.html where we can perform CRUD operation
  
