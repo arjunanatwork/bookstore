@@ -4,9 +4,18 @@ A Online Book Store App based on Spring Boot
 
 ## How to Run
 
-** Running directly the given JARs **
- - Go to "Deployable_Jars" Folder where all the related JARs are present
- - Run java -jar <executable jar file>
+** Running through cmd
+ - Run 'mvn clean package' from project location
+ - Run java -jar target/bookstore.jar
+ - Open http://localhost:8090/swagger-ui/index.html to view application API Swagger 
+ 
+
+** Running through Docker
+ - mvn clean package
+ - docker build -t bookstore:1.0 . (From the Dockerfile Location)
+ - docker run -d -p 8090:8090 -t bookstore:1.0
+ 
+** Others Steps **
  - Open http://localhost:8090/swagger-ui/index.html to view application API Swagger
  - Run the Author and Classification API to get the Ids of the enities
  - Run the 'Save Book API' by passing the relevant details along the Author and Classification ID
@@ -15,11 +24,6 @@ A Online Book Store App based on Spring Boot
  - A Promo Code can added to the in-memory(http://localhost:8090/h2-console) table by inserting the relevant details
 	-  For Example: INSERT INTO PROMOTION (id, classification_id, promotion_code, discount, created_date, last_updated_date,created_by,last_updated_by) VALUES
                     (promotion_seq.NEXTVAL , (select id from classification where name='FRICTION'), 'TEST10',10,SYSDATE, NULL, 'SYSTEM', NULL);
-
-** Running through Docker
- - mvn clean package
- - docker build -t bookstore:1.0 .
- - docker run -d -p 8090:8090 -t bookstore:1.0
 
 
 ## Application Related Information
